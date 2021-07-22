@@ -4,7 +4,7 @@
   "description": "small shop ecommerce site",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node backend/server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Developer3027/ecom_mern/issues"
   },
-  "homepage": "https://github.com/Developer3027/ecom_mern#readme"
+  "homepage": "https://github.com/Developer3027/ecom_mern#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
