@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Fish Oil Ultra',
     image: '/images/Fish_Ultra.png',
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '2',
     name: 'Forti Flax',
     image: '/images/Forti-Flax.png',
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 8
   },
   {
-    _id: '3',
     name: 'MultiSport Mens',
     image: '/images/nutrabio-multisport.png',
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '4',
     name: 'MultiSport Woman',
     image: '/images/nutrabio-multisport-w.png',
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '5',
     name: 'Pre Workout',
     image: '/images/nutrabio-pre-workout.png',
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 10
   },
   {
-    _id: '6',
     name: 'Environmental Detox',
     image: '/images/Platinum-Environmental-Detox.png',
     description:
@@ -78,7 +72,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '7',
     name: 'SAN Shredded',
     image: '/images/SAN_Shredded.png',
     description:
@@ -91,7 +84,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '8',
     name: 'SAN Titanium Isolate',
     image: '/images/SAN_Ti-Isolate.png',
     description:
@@ -104,7 +96,6 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '9',
     name: 'SAN Zinc Magnesium Aspartate',
     image: '/images/SAN_Zinc-Mag.png',
     description:
