@@ -14,7 +14,7 @@ const ProductPage = ({ match }) => {
       setProduct(data);
     };
     fetchProduct();
-  }, []);
+  }, [match]);
 
   // const product = products.find((p) => p._id === match.params.id);
   const { name, image, rating, numReviews, price, description, countInStock } =
