@@ -104,7 +104,7 @@ const products = [
     numReviews: 12
   },
   {
-    _id: '',
+    _id: '9',
     name: 'SAN Zinc Magnesium Aspartate',
     image: '/images/SAN_Zinc-Mag.png',
     description:

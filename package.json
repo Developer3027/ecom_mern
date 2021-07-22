@@ -1,0 +1,19 @@
+{
+  "name": "nutrasite",
+  "version": "1.0.0",
+  "description": "small shop ecommerce site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Developer3027/ecom_mern.git"
+  },
+  "author": "mason roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Developer3027/ecom_mern/issues"
+  },
+  "homepage": "https://github.com/Developer3027/ecom_mern#readme"
+}
