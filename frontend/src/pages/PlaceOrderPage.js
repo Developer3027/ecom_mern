@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { createOrder } from '../actions/order.actions';
 import Message from '../components/Message';
 import CheckoutSteps from '../components/CheckoutSteps';
 
-const PlaceOrderPage = () => {
+const PlaceOrderPage = ({ history }) => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const showDecimals = (num) => {
@@ -25,9 +27,28 @@ const PlaceOrderPage = () => {
     Number(cart.shippingPrice) +
     Number(cart.taxPrice);
 
+  const retrievedOrder = useSelector((state) => state.orderCreated);
+  const { order, success, error } = retrievedOrder;
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+    }
+  }, [history, success]);
+
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    console.log('order placed');
+    dispatch(
+      createOrder({
+        orderItems: cart.orderItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice
+      })
+    );
   };
 
   return (
@@ -117,6 +138,9 @@ const PlaceOrderPage = () => {
                   <Col>Total</Col>
                   <Col>${cart.totalPrice}</Col>
                 </Row>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                {error && <Message variant='danger'>{error}</Message>}
               </ListGroup.Item>
               <ListGroup.Item className='d-grid'>
                 <Button
