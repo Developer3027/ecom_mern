@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import actionTypes from '../action_types/action.types';
 import axios from 'axios';
 import { PayPalButton } from 'react-paypal-button-v2';
-import { Button, Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
 import { getOrderDetails, payOrder } from '../actions/order.actions';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
