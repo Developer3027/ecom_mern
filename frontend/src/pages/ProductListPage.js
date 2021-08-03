@@ -1,0 +1,116 @@
+import React, { useEffect } from 'react';
+import { IconContext } from 'react-icons';
+import { FaEllipsisH, FaTrash } from 'react-icons/fa';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Table, Button, Row, Col } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
+import { listProducts, deleteProduct } from '../actions/products.actions';
+
+const ProductListPage = ({ history, match }) => {
+  const dispatch = useDispatch();
+
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
+
+  const delProduct = useSelector((state) => state.delProduct);
+  const {
+    loading: loadingDel,
+    error: errorDel,
+    success: successDel
+  } = delProduct;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo && userInfo.isAdmin) {
+      dispatch(listProducts());
+    } else {
+      history.push('/login');
+    }
+  }, [dispatch, history, userInfo, successDel]);
+
+  const createProductHandler = (products) => {
+    console.log('product handled');
+  };
+
+  const handleDelete = (id) => {
+    if (
+      window.confirm(
+        `This will delete, (last 4) ${id.substring(
+          id.length - 4,
+          id.length
+        )}. Are you sure?`
+      )
+    ) {
+      dispatch(deleteProduct(id));
+    }
+  };
+
+  return (
+    <>
+      <Row className='align-items-center'>
+        <Col>
+          <h1>Products</h1>
+        </Col>
+        <Col className='text-right'>
+          <Button className='my-3' onClick={createProductHandler}>
+            Add Product
+          </Button>
+        </Col>
+      </Row>
+
+      {loadingDel && <Loader />}
+      {errorDel && <Message variant='danger'>{errorDel}</Message>}
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
+        <Table striped bordered hover responsive className='table-sm'>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>PRICE</th>
+              <th>CATEGORY</th>
+              <th>BRAND</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((item) => (
+              <tr key={item._id}>
+                <td>{item._id}</td>
+                <td>{item.name}</td>
+                <td>${item.price}</td>
+                <td>{item.category}</td>
+                <td>{item.brand}</td>
+                <td>
+                  <LinkContainer to={`/admin/product/${item._id}/edit`}>
+                    <Button className='btn-sm'>
+                      <FaEllipsisH />
+                    </Button>
+                  </LinkContainer>
+                  &nbsp;
+                  <IconContext.Provider
+                    value={{ color: 'red', cursor: 'pointer' }}>
+                    <Button
+                      className='btn-sm'
+                      onClick={() => handleDelete(item._id)}>
+                      <FaTrash />
+                    </Button>
+                  </IconContext.Provider>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      )}
+    </>
+  );
+};
+
+export default ProductListPage;
