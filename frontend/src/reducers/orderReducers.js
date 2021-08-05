@@ -71,6 +71,30 @@ export const orderPayReducer = (state = {}, action) => {
   }
 };
 
+export const orderDeliverReducer = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.ORDER_DELIVER_REQUEST:
+      return {
+        ...state,
+        loading: true
+      };
+    case actionTypes.ORDER_DELIVER_SUCCESS:
+      return {
+        loading: false,
+        success: true
+      };
+    case actionTypes.ORDER_DELIVER_FAIL:
+      return {
+        loading: false,
+        error: action.payload
+      };
+    case actionTypes.ORDER_DELIVER_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
 export const getUserOrdersReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case actionTypes.ORDER_USER_LIST_REQUEST:
@@ -90,6 +114,27 @@ export const getUserOrdersReducer = (state = { orders: [] }, action) => {
     case actionTypes.ORDER_USER_LIST_RESET:
       return {
         orders: []
+      };
+    default:
+      return state;
+  }
+};
+
+export const getOrdersListReducer = (state = { orders: [] }, action) => {
+  switch (action.type) {
+    case actionTypes.ORDER_LIST_REQUEST:
+      return {
+        loading: true
+      };
+    case actionTypes.ORDER_LIST_SUCCESS:
+      return {
+        loading: false,
+        orders: action.payload
+      };
+    case actionTypes.ORDER_LIST_FAIL:
+      return {
+        loading: false,
+        error: action.payload
       };
     default:
       return state;

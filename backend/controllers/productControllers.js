@@ -9,6 +9,16 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json(products);
 });
 
+//* @desc    Fetch Barleans products
+//* @route   GET /api/products/barleans
+//* @access  public
+const getBarleansProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({
+    brand: 'Barleans'
+  });
+  res.json(products);
+});
+
 //* @desc    Fetch product by id
 //* @route   GET /api/products/:id
 //* @access  public
@@ -86,6 +96,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 export {
   getProducts,
+  getBarleansProducts,
   getProductById,
   deleteProduct,
   createProduct,

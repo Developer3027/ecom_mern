@@ -3,7 +3,7 @@ const products = [
     name: 'Fish Oil Ultra',
     image: '/images/Fish_Ultra.png',
     description:
-      'Perfect fish oil from the finest fish in the finest farms packed full of omega 3 and anti agents of doom ready to do the hard work you need from it.',
+      'Fresh fish oil from the best fish in the finest farms packed full of omega 3 and anti agents of doom ready to do the hard work you need.',
     brand: 'Barleans',
     category: 'Health',
     price: 35.99,
@@ -15,7 +15,7 @@ const products = [
     name: 'Forti Flax',
     image: '/images/Forti-Flax.png',
     description:
-      'Premium ground Flaxseed. Ground with diamond titanium plestex carbid numan tip on simple organic kentucky grey slate. So much fiber.',
+      'Premium ground Flaxseed. Ground with a diamond titanium plestex carbid numan tip on simple organic kentucky grey slate.',
     brand: 'Barleans',
     category: 'Health',
     price: 599.99,
@@ -39,7 +39,7 @@ const products = [
     name: 'MultiSport Woman',
     image: '/images/nutrabio-multisport-w.png',
     description:
-      "We have taken spice and everything nice. Mixed in a little breeze on a hot day, a little swing by the creek and a splash of beach in the evening. Even put pink on the label, and it is double the men's version!",
+      'We have taken spice and everything nice. Mixed in a little breeze on a hot day. Even put pink on the label to make it pretty!',
     brand: 'NutraBio',
     category: 'Sport',
     price: 49.99,
@@ -51,7 +51,7 @@ const products = [
     name: 'Pre Workout',
     image: '/images/nutrabio-pre-workout.png',
     description:
-      'Have you ever drug yourself into the gym to barley be able to lift your eyes, let alone that weight? Not with this jolt of kickin a$$ in a can. We suggest you start by licking your finger and taking just a taste. Not for the faint of heart.',
+      'Be mindful with this jolt of kickin a$$ in a can. We suggest you start by licking your finger and taking just a taste.',
     brand: 'NutraBio',
     category: 'Work Out',
     price: 49.99,
@@ -63,7 +63,7 @@ const products = [
     name: 'Environmental Detox',
     image: '/images/Platinum-Environmental-Detox.png',
     description:
-      'Feeling sticky, flushed, radiated? Has your environment got you down? Just one tablespoon of this stuff will most def flush your system. Seriously, ensure you have both time and tp before use. Most people lose 30lbs in just water weight! Pepto will not help',
+      'Feeling sticky, flushed, radiated? Has your environment got you down? Just one teaspoon of this stuff will most def flush you out.',
     brand: 'Barleans',
     category: 'Health',
     price: 29.99,
@@ -75,7 +75,7 @@ const products = [
     name: 'SAN Shredded',
     image: '/images/SAN_Shredded.png',
     description:
-      "Think Jason Statham, Jason Momoa, or Chris Hemsworth. Yes, all that from this bottle. We don't charge enough",
+      "Think Jason Statham, Stallone Jason Momoa, and Chris Hemsworth. Yes, all that from this bottle. We really don't charge enough.",
     brand: 'SAN',
     category: 'Work Out',
     price: 529.99,
@@ -87,7 +87,7 @@ const products = [
     name: 'SAN Titanium Isolate',
     image: '/images/SAN_Ti-Isolate.png',
     description:
-      'Isolating that titanium is never easy, even for this titanium isolate, tough.',
+      'Isolating that titanium is never easy, but when you need that extra help to pull out the titan and smack that ium, grab this stuff.',
     brand: 'SAN',
     category: 'Work Out',
     price: 9.99,
@@ -99,7 +99,7 @@ const products = [
     name: 'SAN Zinc Magnesium Aspartate',
     image: '/images/SAN_Zinc-Mag.png',
     description:
-      'Sounds like it starts fires, or powers nuclear subs. It has As-part-ate in it. What more do you need, seriously?',
+      'Sounds like it starts fires, or powers nuclear subs, never mind it has As-part-ate in it. What more do ya need, seriously?',
     brand: 'SAN',
     category: 'Work Out',
     price: 79.99,

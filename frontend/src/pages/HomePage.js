@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
-import Product from '../components/Product';
+import { Row, Col, Container } from 'react-bootstrap';
+import ProductHorizontal from '../components/ProductHorizontal';
 import { listProducts } from '../actions/products.actions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -24,13 +24,15 @@ const HomePage = () => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row>
-          {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
+        <Container fluid className='center-flex'>
+          <Row>
+            {products.map((product) => (
+              <Col className='center-flex' key={product._id}>
+                <ProductHorizontal product={product} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       )}
     </>
   );
