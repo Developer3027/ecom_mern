@@ -4,6 +4,7 @@ import { FaEllipsisH, FaTrash } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import Paginate from '../components/Paginate';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import actionTypes from '../action_types/action.types';
@@ -14,10 +15,12 @@ import {
 } from '../actions/products.actions';
 
 const ProductListPage = ({ history, match }) => {
+  const pageNumber = match.params.pageNumber || 1;
+
   const dispatch = useDispatch();
 
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+  const { loading, error, products, pages, page } = productList;
 
   const delProduct = useSelector((state) => state.delProduct);
   const {
@@ -47,9 +50,17 @@ const ProductListPage = ({ history, match }) => {
     if (successCreate) {
       history.push(`/admin/product/${createdProduct._id}/edit`);
     } else {
-      dispatch(listProducts());
+      dispatch(listProducts('', pageNumber));
     }
-  }, [dispatch, history, userInfo, successDel, successCreate, createdProduct]);
+  }, [
+    dispatch,
+    history,
+    userInfo,
+    successDel,
+    successCreate,
+    createdProduct,
+    pageNumber
+  ]);
 
   const handleDelete = (id) => {
     if (
@@ -90,45 +101,48 @@ const ProductListPage = ({ history, match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className='table-sm'>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>PRICE</th>
-              <th>CATEGORY</th>
-              <th>BRAND</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((item) => (
-              <tr key={item._id}>
-                <td>{item._id}</td>
-                <td>{item.name}</td>
-                <td>${item.price}</td>
-                <td>{item.category}</td>
-                <td>{item.brand}</td>
-                <td>
-                  <LinkContainer to={`/admin/product/${item._id}/edit`}>
-                    <Button className='btn-sm'>
-                      <FaEllipsisH />
-                    </Button>
-                  </LinkContainer>
-                  &nbsp;
-                  <IconContext.Provider
-                    value={{ color: 'red', cursor: 'pointer' }}>
-                    <Button
-                      className='btn-sm'
-                      onClick={() => handleDelete(item._id)}>
-                      <FaTrash />
-                    </Button>
-                  </IconContext.Provider>
-                </td>
+        <>
+          <Table striped bordered hover responsive className='table-sm'>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+                <th>BRAND</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {products.map((item) => (
+                <tr key={item._id}>
+                  <td>{item._id}</td>
+                  <td>{item.name}</td>
+                  <td>${item.price}</td>
+                  <td>{item.category}</td>
+                  <td>{item.brand}</td>
+                  <td>
+                    <LinkContainer to={`/admin/product/${item._id}/edit`}>
+                      <Button className='btn-sm'>
+                        <FaEllipsisH />
+                      </Button>
+                    </LinkContainer>
+                    &nbsp;
+                    <IconContext.Provider
+                      value={{ color: 'red', cursor: 'pointer' }}>
+                      <Button
+                        className='btn-sm'
+                        onClick={() => handleDelete(item._id)}>
+                        <FaTrash />
+                      </Button>
+                    </IconContext.Provider>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+          <Paginate pages={pages} page={page} isAdmin={true} />
+        </>
       )}
     </>
   );

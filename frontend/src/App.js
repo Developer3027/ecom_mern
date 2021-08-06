@@ -38,9 +38,25 @@ const App = () => {
             <Route path='/order/:id' component={OrderPage} />
             <Route path='/admin/userlist' component={UserListPage} />
             <Route path='/admin/user/:id/edit' component={UserEditPage} />
-            <Route path='/admin/productlist' component={ProductListPage} />
+            <Route
+              exact
+              path='/admin/productlist'
+              component={ProductListPage}
+            />
+            <Route
+              exact
+              path='/admin/productlist/:pageNumber'
+              component={ProductListPage}
+            />
             <Route path='/admin/product/:id/edit' component={ProductEditPage} />
             <Route path='/admin/orderlist' component={OrderListPage} />
+            <Route exact path='/search/:keyword' component={HomePage} />
+            <Route path='/page/:pageNumber' component={HomePage} />
+            <Route
+              exact
+              path='/search/:keyword/page/:pageNumber'
+              component={HomePage}
+            />
             <Route exact path='/' component={HomePage} />
           </Switch>
         </Container>
