@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
-import ProductHorizontal from '../components/ProductHorizontal';
+import Product from '../components/Product';
 import { listProducts } from '../actions/products.actions';
 import Paginate from '../components/Paginate';
+import ProductCarousel from '../components/ProductCarousel';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-//* <Col sm={12} md={6} lg={4} xl={3} w/key>
+//* <Col className='center-flex' sm={12} md={6} lg={4} xl={3} w/key>
 
 const HomePage = ({ match }) => {
   const keyword = match.params.keyword;
@@ -25,6 +26,7 @@ const HomePage = ({ match }) => {
 
   return (
     <>
+      <ProductCarousel />
       <h1>Latest Products</h1>
       {loading ? (
         <Loader />
@@ -35,8 +37,8 @@ const HomePage = ({ match }) => {
           <Container fluid className='center-flex'>
             <Row>
               {products.map((product) => (
-                <Col className='center-flex' key={product._id}>
-                  <ProductHorizontal product={product} />
+                <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
+                  <Product product={product} />
                 </Col>
               ))}
             </Row>

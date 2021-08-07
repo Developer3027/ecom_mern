@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Row, Col, Button } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 
 const ProductHorizontal = ({ product }) => {
   const { _id, image, name, price, description } = product;
