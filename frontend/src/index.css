@@ -2,6 +2,16 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
 h3 {
   padding: 1rem 0;
 }
@@ -12,4 +22,110 @@ main {
 
 .rating span {
   margin: 0.1rem;
+}
+
+.bg-light-grey {
+  background-color: #d5d8dd;
+}
+
+.drk-txt {
+  color: #222;
+}
+
+.center-number {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icon {
+  margin: 5px 1em;
+}
+
+.bg-black {
+  background-color: black !important;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+.carousel-img {
+  height: 300px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+}
+
+.carousel a {
+  margin: 0 auto;
+}
+
+/* brand nav */
+.brand-nav-main {
+  border-top: 5px solid #10c500;
+  padding-top: 1em;
+  margin-bottom: 3em;
+}
+
+.brand-brands {
+  display: flex;
+  justify-content: space-between;
+}
+/***Need to address this in NavBrand***/
+.brand-link-active-all {
+  display: flex;
+  opacity: 0;
+  border: 2px solid #10c500;
+  width: 30px;
+}
+
+.brand-link-active {
+  display: flex;
+  opacity: 0;
+  border: 2px solid #10c500;
+  width: 100%;
+}
+
+.brand-link {
+  border: none;
+  background: none;
+}
+
+.brand-link:hover {
+  color: #98ff96;
+  border: none !important;
+  background: none !important;
+}
+
+@media (max-width: 450px) {
+  .brand-nav-main {
+    display: none;
+  }
 }
