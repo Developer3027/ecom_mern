@@ -32,6 +32,20 @@ main {
   color: #222;
 }
 
+.center-number {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icon {
+  margin: 5px 1em;
+}
+
+.bg-black {
+  background-color: black !important;
+}
+
 .center-flex {
   display: flex;
   align-items: center;
@@ -71,4 +85,47 @@ main {
 
 .carousel a {
   margin: 0 auto;
+}
+
+/* brand nav */
+.brand-nav-main {
+  border-top: 5px solid #10c500;
+  padding-top: 1em;
+  margin-bottom: 3em;
+}
+
+.brand-brands {
+  display: flex;
+  justify-content: space-between;
+}
+/***Need to address this in NavBrand***/
+.brand-link-active-all {
+  display: flex;
+  opacity: 0;
+  border: 2px solid #10c500;
+  width: 30px;
+}
+
+.brand-link-active {
+  display: flex;
+  opacity: 0;
+  border: 2px solid #10c500;
+  width: 100%;
+}
+
+.brand-link {
+  border: none;
+  background: none;
+}
+
+.brand-link:hover {
+  color: #98ff96;
+  border: none !important;
+  background: none !important;
+}
+
+@media (max-width: 450px) {
+  .brand-nav-main {
+    display: none;
+  }
 }

@@ -12,7 +12,7 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To NutraSite',
+  title: 'NutraSite',
   description:
     'We sell the most wonderful and best selling health supplements on the internet.',
   keywords: 'DeTox, Pre Workout, Muscle Mass, Energy'

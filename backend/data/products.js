@@ -1,6 +1,6 @@
 const products = [
   {
-    name: 'Fish Oil Ultra',
+    name: 'Barleans Fish Oil Ultra',
     image: '/images/Fish_Ultra.png',
     description:
       'Fresh fish oil from the best fish in the finest farms packed full of omega 3 and anti agents of doom ready to do the hard work you need.',
@@ -12,7 +12,7 @@ const products = [
     numReviews: 12
   },
   {
-    name: 'Forti Flax',
+    name: 'Barleans Forti Flax',
     image: '/images/Forti-Flax.png',
     description:
       'Premium ground Flaxseed. Ground with a diamond titanium plestex carbid numan tip on simple organic kentucky grey slate.',
@@ -24,7 +24,7 @@ const products = [
     numReviews: 8
   },
   {
-    name: 'MultiSport Mens',
+    name: 'NutraBio MultiSport Mens',
     image: '/images/nutrabio-multisport.png',
     description:
       'We have taken snails and puppy dawg tails. Mixed in both shinny and heavy things. Put it all in this sleek black bottle just for you.',
@@ -36,7 +36,7 @@ const products = [
     numReviews: 12
   },
   {
-    name: 'MultiSport Woman',
+    name: 'NutraBio MultiSport Woman',
     image: '/images/nutrabio-multisport-w.png',
     description:
       'We have taken spice and everything nice. Mixed in a little breeze on a hot day. Even put pink on the label to make it pretty!',
@@ -48,7 +48,7 @@ const products = [
     numReviews: 12
   },
   {
-    name: 'Pre Workout',
+    name: 'NutraBio Pre Workout',
     image: '/images/nutrabio-pre-workout.png',
     description:
       'Be mindful with this jolt of kickin a$$ in a can. We suggest you start by licking your finger and taking just a taste.',
@@ -60,7 +60,7 @@ const products = [
     numReviews: 10
   },
   {
-    name: 'Environmental Detox',
+    name: 'Barleans Environmental Detox',
     image: '/images/Platinum-Environmental-Detox.png',
     description:
       'Feeling sticky, flushed, radiated? Has your environment got you down? Just one teaspoon of this stuff will most def flush you out.',
@@ -104,6 +104,18 @@ const products = [
     category: 'Work Out',
     price: 79.99,
     countInStock: 5,
+    rating: 4,
+    numReviews: 12
+  },
+  {
+    name: 'Swanson CoQ10',
+    image: '/images/swanCoQ10.png',
+    description:
+      'Supports antioxidant activity while helping maintain healthy blood sugar levels and promotes muscle and physical endurance.',
+    brand: 'Swanson',
+    category: 'Health',
+    price: 14.99,
+    countInStock: 25,
     rating: 4,
     numReviews: 12
   }

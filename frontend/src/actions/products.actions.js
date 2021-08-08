@@ -2,13 +2,13 @@ import axios from 'axios';
 import actionTypes from '../action_types/action.types';
 
 export const listProducts =
-  (keyword = '', pageNumber = '') =>
+  (keyword = '', brand = '', pageNumber = '') =>
   async (dispatch) => {
     try {
       dispatch({ type: actionTypes.PRODUCT_LIST_REQUEST });
 
       const { data } = await axios.get(
-        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+        `/api/products?keyword=${keyword}&brand=${brand}&pageNumber=${pageNumber}`
       );
 
       dispatch({
