@@ -20,6 +20,8 @@ import UserEditPage from './pages/UserEditPage';
 import ProductListPage from './pages/ProductListPage';
 import ProductEditPage from './pages/ProductEditPage';
 
+import Dashboard from './pages/Dashboard';
+
 const App = () => {
   return (
     <Router>
@@ -36,6 +38,7 @@ const App = () => {
             <Route path='/payment' component={PaymentPage} />
             <Route path='/placeorder' component={PlaceOrderPage} />
             <Route path='/order/:id' component={OrderPage} />
+            <Route path='/admin/dashboard' component={Dashboard} />
             <Route path='/admin/userlist' component={UserListPage} />
             <Route path='/admin/user/:id/edit' component={UserEditPage} />
             <Route
