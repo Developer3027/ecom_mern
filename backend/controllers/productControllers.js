@@ -29,9 +29,9 @@ const getProducts = asyncHandler(async (req, res) => {
 //* @route   GET /api/products/top
 //* @access  public
 const getTopProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({}).sort({ rating: -1 }).limit(3);
+  const topProducts = await Product.find({}).sort({ rating: -1 }).limit(3);
 
-  res.json(products);
+  res.json(topProducts);
 });
 
 //* @desc    Fetch Barleans products

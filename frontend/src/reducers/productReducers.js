@@ -141,17 +141,20 @@ export const productReviewCreateReducer = (state = {}, action) => {
   }
 };
 
-export const productTopRatedReducer = (state = { products: [] }, action) => {
+export const productsTopRatedReducer = (
+  state = { topProducts: [] },
+  action
+) => {
   switch (action.type) {
     case actionTypes.PRODUCT_TOP_RATED_REQUEST:
       return {
         loading: true,
-        products: []
+        topProducts: []
       };
     case actionTypes.PRODUCT_TOP_RATED_SUCCESS:
       return {
         loading: false,
-        products: action.payload
+        topProducts: action.payload
       };
     case actionTypes.PRODUCT_TOP_RATED_FAIL:
       return {

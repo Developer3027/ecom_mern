@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Container } from 'react-bootstrap';
@@ -9,6 +10,7 @@ import BrandNav from '../components/BrandNav';
 import Paginate from '../components/Paginate';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import ProductCarousel from '../components/ProductCarousel';
 
 //* <Col className='center-flex' sm={12} md={6} lg={4} xl={3} w/key>
 
@@ -30,6 +32,7 @@ const HomePage = ({ match, history }) => {
   return (
     <>
       <Route render={({ history }) => <BrandNav history={history} />} />
+      <ProductCarousel />
       {loading ? (
         <Loader />
       ) : error ? (
