@@ -61,6 +61,7 @@ const ProductPage = ({ match, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log('rating', rating);
     dispatch(
       createProductReview(match.params.id, {
         rating,
@@ -191,7 +192,12 @@ const ProductPage = ({ match, history }) => {
                         <Form.Control
                           as='select'
                           value={ratingState}
-                          onChange={(e) => setRatingState(e.target.value)}>
+                          onChange={(e) => {
+                            setRatingState('0');
+                            setRatingState(e.target.value);
+                            console.log(e.target.value);
+                            console.log(ratingState);
+                          }}>
                           <option value=''>Select...</option>
                           <option value='1'>1 - Poor</option>
                           <option value='2'>2 - Fair</option>

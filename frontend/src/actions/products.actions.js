@@ -148,6 +148,7 @@ export const createProductReview =
   (productId, review) => async (dispatch, getState) => {
     try {
       dispatch({ type: actionTypes.PRODUCT_CREATE_REVIEW_REQUEST });
+      console.log('review', review);
 
       const {
         userLogin: { userInfo }
