@@ -182,7 +182,6 @@ export const listTopProducts = () => async (dispatch) => {
     dispatch({ type: actionTypes.PRODUCT_TOP_RATED_REQUEST });
 
     const { data } = await axios.get(`/api/products/top`);
-    console.log(data);
 
     dispatch({
       type: actionTypes.PRODUCT_TOP_RATED_SUCCESS,
