@@ -77,18 +77,19 @@ const ProductEditPage = ({ match, history }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      updateProduct({
-        _id: productId,
-        name,
-        price,
-        image,
-        brand,
-        category,
-        description,
-        countInStock
-      })
-    );
+    console.log('product submitted');
+    // dispatch(
+    //   updateProduct({
+    //     _id: productId,
+    //     name,
+    //     price,
+    //     image,
+    //     brand,
+    //     category,
+    //     description,
+    //     countInStock
+    //   })
+    // );
   };
 
   return (
